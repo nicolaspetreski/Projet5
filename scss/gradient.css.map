@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,SAAS,CAAA;EACL,UAAU,EAAE,iCAAiC;CAChD",
+    "sources": [
+        "gradient.scss"
+    ],
+    "names": [],
+    "file": "gradient.css"
+}

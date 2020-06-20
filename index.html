@@ -2,60 +2,66 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Oricam, boutique specialisée en cameras vintage"/>
     <script src="https://kit.fontawesome.com/e53970f2ae.js"crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../scss/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@100;200;300;400&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/c838d79e10.js" crossorigin="anonymous"></script>
+    
     <title>Oricam, le meilleur du vintage à un seul endroit!</title> 
   </head>
 
   <body>
     <header>
-      <nav class="navbar">
-        <img src="../images/logo.png" alt="logo oricam" />
-        <h1>Oricam</h1>
-        <div class="navbar-responsive collapse">
-          <a class="nav-item nav-link" href="checkout.html"
-            ><i class="fas fa-shopping-cart"></i>Panier</a
-          >
-        </div>
-      </nav>
+      <div class="nav-container">
+        <nav>
+            <h1 id="logo">Oricam</h1>
+              <a class="order" href="checkout.html">Panier<i class="fas fa-shopping-cart"></i></a>
+        </nav>
+      </div>
     </header>
-    <section id="product">
+    
+    <section class="products">
+      <div class="showcase">
+        <h2> Leica m6</h2>
+        <div class="info">
+          <h3> small but ok</h3>
+          <p> the new leica is amazing offers 4k at 60fps, raw video and full frame sensor</p>
+        </div>
+      </div>
       <div id="mainPage"></div>
     </section>
 
     <footer>
-      <nav class="navbar-footer">
-        <div class="dropdown">
-          <button class="dropbtn">Entreprise</button>
-          <div class="dropdown-content">
-            <a href="#">Qui somme nous</a>
-            <a href="#">SAV</a>
-            <a href="#">Livraison</a>
-            <a href="#">Conditions</a>
-            <a href="#">FAQ</a>
-          </div>
-        </div>
-        
+      <div class="nav-container">
+      <nav>
+          <ul>
+            <li><a href="#">Qui somme nous</a></li>
+            <li><a href="#">SAV</a></li>
+            <li><a href="#">Livraison</a></li>
+            <li><a href="#">Conditions</a></li>
+          </ul>
+
+          
         <div class="social">
+          <h3>Suivez-nous</h3>
           <a href="https://www.facebook.com/VTTeddyBear/" target="_blank"
-            ><span class="social-text">Facebook</span
+            ><span class="social-text"></span
             ><i class="fab fa-facebook-f"></i
           ></a>
           <a href="https://twitter.com/vtteddybear" target="_blank"
-            ><span class="social-text">Twitter</span
+            ><span class="social-text"></span
             ><i class="fab fa-twitter"></i
           ></a>
           <a href="https://instagram.com/vtteddybear/" target="_blank"
-            ><span class="social-text">Instagram</span
+            ><span class="social-text"></span
             ><i class="fab fa-instagram"></i
           ></a>
           
         </div>
       </nav>
+    </div>
     </footer>
     <script src="index.js"></script>
   </body>
