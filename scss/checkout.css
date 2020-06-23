@@ -1,1 +1,47 @@
-/* No CSS *//*# sourceMappingURL=checkout.css.map */
+.products {
+  background: radial-gradient(#525252, #131313);
+}
+
+.nav-container {
+  background: #070707;
+}
+
+nav {
+  width: 80%;
+  margin: auto;
+  min-height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#logo {
+  position: relative;
+}
+
+#logo::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  background: #f54538;
+  border-radius: 50%;
+  -webkit-transform: translate(-5%, -30%);
+          transform: translate(-5%, -30%);
+  mix-blend-mode: screen;
+}
+
+.order {
+  background: #f54538;
+  padding: 0.7rem 1rem;
+  border-radius: 2rem;
+}
+/*# sourceMappingURL=checkout.css.map */
