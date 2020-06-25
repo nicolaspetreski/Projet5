@@ -10,21 +10,21 @@ async function getCameras() {                       // Cette partie est très si
     
     .then((data) => {
         data.forEach((camera) => {
-            const { name, _id, colors, price, description, imageUrl } = camera
+            const { name, _id, lenses, price, description, imageUrl } = camera
             let id = `${_id}`;                              // On déclare "id" commme étant l'id du teddy selectionné sur la page index.html                
             if(window.location.href.indexOf(id) > -1) {     // On récupère l'id trouvé dans l'url de la page et la compare à l'id de l'ourson actuel
                 flag++;                                     // Si l'id du teddy est trouvé dans l'url, le flag s'incrémente
                if (flag == 1) {                             // Si le flag a été incrémenté, le contenu est généré                        
-                teddyAppend.innerHTML +=
-                    `<div class="teddyImport">
-                        <h3 class="teddyName">${name}</h3>
-                            <ul class="teddyInfo">
+                cameraAppend.innerHTML +=
+                    `<div class="cameraImport">
+                        <h3 class="cameraName">${name}</h3>
+                            <ul class="cameraInfo">
                                 <li id="description">Description : <br />${description}</li>
                                 <li id="price">Prix: ${price/100}€</li> 
                             </ul> 
                             <img src="${imageUrl}" alt="Photo de ${name}" class="teddyPhoto"></img>
                             <div class="quantityDiv">
-                                <label for="quantityInput">Combien d'oursons voulez-vous ajouter à votre panier ?</label><br />
+                                <label for="quantityInput">combien de lentilles aimeriez-vous acheter ?</label><br />
                                 <input step="number" placeholder="Quantité" 
                                     class="quantity-input" id="quantityInput" 
                                     name="quantityInput" type="number" min="1" max="99">
@@ -45,84 +45,79 @@ async function getCameras() {                       // Cette partie est très si
 
                         const panier = document.getElementById("panier");
 
-                // Boucle qui sert à trouver combien de couleurs il y a pour chaque teddy
-                for (let i = 0; i < colors.length; i++) {
-                    teddyColorAppend.innerHTML +=
-                    `<option id="appendedColors" value="${colors[i]}" selected="selected">  ${colors[i]}  </option>`;
+                
+                for (let i = 0; i < lenses.length; i++) {
+                    cameraLensAppend.innerHTML +=
+                    `<option id="appendedLenses" value="${lenses[i]}" selected="selected">  ${lenses[i]}  </option>`;
                 }
 
-                    // Ajout d'une fonction 'onclick' sur le bouton "Ajouter au panier"
+                    
                     panier.addEventListener('click', function(e) {
                         
                     let color = document.querySelector('select').value;
 
                     let quantity = document.getElementById('quantityInput').value;
-                    // Ce if / else permet de s'assurer que l'utilisateur remplisse la case "quantité" avec au moins 1
+
                     if (quantity < 1) { 
-                    // Si l'utilisateur laisse l'input vierge, tape 0 ou -x, une erreur sera renvoyée   
-                        swal("Vous n'avez pas oublié quelque chose ?", "Il va vous falloir au moins 1 teddy !", "error");
+ 
+                        swal("Un minimum d'une lentille est requis", "error");
                     
                     } else {
-                    // Par contre si l'utilisateur entre une valeur de 1 ou plus, tout le code suivant sera éxécuté
                         let cart = {
                             "id" : id,
                             "name" : name,
-                            "price" : price/100,            // Déclaration de cart, un objet représentant un teddy type
-                            "color" : color,
+                            "price" : price/100,            
+                            "lenses" : lens,
                             "quantity" : quantity,
                             "imageURL" : imageUrl
                         }
                         
-                        swal("Produit ajouté au panier", "", "success");
+                        swal("Le produit ajouté au panier avec succes", "", "success");
 
-                        // Première utilisation du localStorage - Ici on vérifié si nous avons quelque chose dedans
-                        let cartItems = JSON.parse(localStorage.getItem('teddyCart')) || [];
+                    
+                        let cartItems = JSON.parse(localStorage.getItem('cameraCart')) || [];
 
-                        // If / Else servant à éxécuter du code en fonction de s'il y a du contenu dans le localStorage
-                        if (localStorage.getItem('teddyCart') === null) { /* Si le localStorage est vide */
+                        if (localStorage.getItem('cameraCart') === null) { 
 
-                            cartItems.push(cart);       // On va ajouter le produit actuel à l'array cartItems
+                            cartItems.push(cart); 
 
-                            localStorage.setItem("teddyCart", JSON.stringify(cart)) || []; // Puis créer notre localStorage 'teddyCart
+                            localStorage.setItem("cameraCart", JSON.stringify(cart)) || []; 
 
-                        } else {    // Par contre, si le localStorage a déjà du contenu
+                        } else {  
 
-                            let itemHasChanged = false; // Cette déclaration servira pour contrôler les doublons
+                            let itemHasChanged = false; // Cette déclaration servira 
                             
                             for(let i = 0; i < cartItems.length; i++) {   
-                                // en fonction de la quantité de produits dans le localStorage
-                                // S'il y a déjà un item avec un nom ET une couleur identique
-                                if((cartItems[i].name == cart.name) && cartItems[i].color == cart.color) { 
+
+                                if((cartItems[i].name == cart.name) && cartItems[i].color == cart.lens) { 
                               
                                   let cartItemsQuantityNumber = Number(cartItems[i].quantity); 
-                                  // On récupère la quantité du produit en cours d'ajout
+
                                   let cartQuantityNumber = Number(cart.quantity);   
-                                  // Ainsi que la quantité de produits identiques déjà présents dans le localStorage
                               
                                   let sumQuantity = cartItemsQuantityNumber + cartQuantityNumber;
-                                     // On additionne ces deux quantités
                               
                                   cartItems[i].quantity = sumQuantity.toString();
-                                     // Et on remplace la quantité du localStorage par cette nouvelle quantité
+                                     
                                   itemHasChanged = true;  
                                 }
                             }
 
                         if(itemHasChanged == false) {  
-                            // Il y a déjà des produits dans le panier mais pas identiques à ceux qui sont en ajout
+
                             cartItems.push(cart);       
-                            // Donc on peut simplement push les nouveaux produits pour les ajouter à l'array cartItems
+
                                 }
                             }   
                             
-                            localStorage.setItem("teddyCart", JSON.stringify(cartItems));   
-                            // Puis stringify le contenu de cartItems pour l'ajouter au localStorage                      
+                            localStorage.setItem("cameraCart", JSON.stringify(cartItems));   
+                     
                             } 
                         });
                     }
                 }
             })
-            if (flag === 0) {           // Si le flag ne s'est pas incrémenté, renvoi vers la page d'erreur
+            if (flag === 0) { 
                 window.location = "error.html";
         }
     })
@@ -132,8 +127,8 @@ async function getCameras() {                       // Cette partie est très si
 
 
 
-window.onload = () => {     /* Encore une fois, on charge la fonction au lancement de la page */
-    getTeddies();
+window.onload = () => {    // lancement de la page 
+    getCameras();
 }
 
 
