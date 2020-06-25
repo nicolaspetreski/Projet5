@@ -1,3 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  font-family: "Lobster", sans-serif;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
 .products {
   background: radial-gradient(#525252, #131313);
 }
