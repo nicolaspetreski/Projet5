@@ -11,10 +11,12 @@ async function getCameras() {                       // Cette partie est très si
     .then((data) => {
         data.forEach((camera) => {
             const { name, _id, lenses, price, description, imageUrl } = camera
-            let id = `${_id}`;                              // On déclare "id" commme étant l'id du teddy selectionné sur la page index.html                
-            if(window.location.href.indexOf(id) > -1) {     // On récupère l'id trouvé dans l'url de la page et la compare à l'id de l'ourson actuel
-                flag++;                                     // Si l'id du teddy est trouvé dans l'url, le flag s'incrémente
-               if (flag == 1) {                             // Si le flag a été incrémenté, le contenu est généré                        
+            let id = `${_id}`; 
+
+            if(window.location.href.indexOf(id) > -1) {   
+                flag++;     
+
+               if (flag == 1) {                                 
                 cameraAppend.innerHTML +=
                     `<div class="cameraImport">
                         <h3 class="cameraName">${name}</h3>
@@ -67,12 +69,12 @@ async function getCameras() {                       // Cette partie est très si
                             "id" : id,
                             "name" : name,
                             "price" : price/100,            
-                            "lenses" : lens,
+                            "lenses" : lenses,
                             "quantity" : quantity,
                             "imageURL" : imageUrl
                         }
                         
-                        swal("Le produit ajouté au panier avec succes", "", "success");
+                        swal("Le produit ajouté au panier avec succes", "success");
 
                     
                         let cartItems = JSON.parse(localStorage.getItem('cameraCart')) || [];
@@ -123,8 +125,6 @@ async function getCameras() {                       // Cette partie est très si
     })
     return data;
 }
-
-
 
 
 window.onload = () => {    // lancement de la page 
