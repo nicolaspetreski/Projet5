@@ -12,7 +12,7 @@
     <title>Panier Oricam, Finalisez de votre achat!</title> 
   </head>
 
-  <body>
+  <body onload="cameraGet()">
     <header>
       <div class="nav-container">
         <nav>
@@ -22,6 +22,70 @@
         </nav>
       </div>
     </header>
+
+    <div id="container">
+      <div class="classForm">
+          <h2 id="checkoutpageTitle"></h2>
+          
+          <section id="cameraContainer">
+          </section>
+
+
+          <section id="totalPrice">
+              <h2>Somme total du panier</h2>
+              <h2 id="endingCheckout"></h2>
+              <div class="doubleButton" id="addBtn">
+                  <section id="clearCart">
+                      <button
+                          type="button";
+                          id="emptyCart";
+                          onclick="emptyCart()";>
+                          Je souhaite vider mon panier 
+                      </button>
+                      <i class="fas fa-trash"></i>
+                  </section>
+                  <section class="checkout" id="confirmPanier">
+                      <button 
+                          type="button";
+                          id="confirmCart";
+                          onclick="confirmCart()";
+                          class="btn-Confirm";>
+                          Je souhaite confirmer mon panier
+                      </button>
+                      <i class="fas fa-shopping-cart icon-card"></i>
+                  </section>
+              </div>
+          </section>
+      </div>
+
+      <section id="form">
+          <div id="onclick--form">
+              <form class="form-container" id="dataCollect">
+                  <label for="firstName">Prénom</label>
+                  <input type="text" name="firstName" placeholder="Votre prénom..." pattern="[a-z-'éèA-Z]+" id="firstName" maxlength="20" required>
+
+                  <label for="lastName">Nom</label>
+                  <input type="text" name="lastName" placeholder="Votre nom..." pattern="[a-z-'éèA-Z]+" id="lastName" maxlength="30" required>
+
+                  <label for="address">Adresse </label>
+                  <input type="text" name="address" placeholder="Votre adresse..." pattern="[0-9 'éèa-zA-Z]+" id="address" maxlength="60" required>
+
+                  <label for="city">Ville</label>
+                  <input type="text" name="city" placeholder="Votre ville..." pattern="[a-z-'éè A-Z]+" id="city" maxlength="35" required>
+
+                  <label for="email">E-mail</label>
+                  <input type="email" name="email" placeholder="exemple@address.com" id="email" required>
+
+                  <div class="buttons">
+                      <button type="button" id="confirmOrder" onclick="orderTeddies()">Valider</button>
+                      <button type="button" class="btn cancel" onclick="closeForm()">Fermer</button>
+                  </div>
+              </form>
+
+
+          </div>
+      </section>
+  </div>
     
   
 
