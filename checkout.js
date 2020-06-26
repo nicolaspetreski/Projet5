@@ -4,18 +4,18 @@ const buttonDown = document.getElementById('down');
 
 const postUrlAPI = "http://localhost:3000/api/cameras/order";
 
-const totalCartCost = document.getElementById('endingCheckout');
+const totalCartCost = document.getElementById('finalCheckout');
 
 function cameraGet() {   // Fonction principale pour l'affichage du panier
     
-    let title = document.querySelector('#checkoutpageTitle');
+    let title = document.querySelector('#checkoutTitle');
 
     let cameraContainer = document.getElementById('cameraContainer');
 
     let finalCheckout = 0;
 
     if(!cartItems.length) { // Au cas ou le panier est vide
-        title.textContent = "Votre panier est vide pour le moment, redirigez vous vers la page d'acceuil et choisissez une camera ainsi qu'une lentille !';
+        title.textContent = "Votre panier est vide pour le moment, redirigez vous vers la page d'acceuil et choisissez une camera ainsi qu'une lentille !";
                 document.getElementById('viderPanier').style.display="none";
                 document.getElementById('finalPrice').style.display="none";
                 document.getElementById('container').style.paddingBottom="0";
@@ -91,7 +91,7 @@ function cameraGet() {   // Fonction principale pour l'affichage du panier
         });     // récupération des prix totaux de chaque item du panier
                 const CamerasTotalPrice = [...document.getElementsByClassName('CameraTotalPrice-Amount')];
                 // Loop pour chaque prix total dans le panier
-                TeddiesTotalPrice.forEach(camera => {
+                CamerasTotalPrice.forEach(camera => {
                     let cameraTotalPrice = parseInt(camera.innerHTML, 10);   
                      // Ceci nous permet de récupérer un "number" au lieu d'un "string"
 

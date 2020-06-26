@@ -24,7 +24,7 @@ async function getCameras() {                       // Cette partie est très si
                                 <li id="description">Description : <br />${description}</li>
                                 <li id="price">Prix: ${price/100}€</li> 
                             </ul> 
-                            <img src="${imageUrl}" alt="Photo de ${name}" class="teddyPhoto"></img>
+                            <img src="${imageUrl}" alt="Photo de ${name}" class="cameraPhoto"></img>
                             <div class="quantityDiv">
                                 <label for="quantityInput">combien de lentilles aimeriez-vous acheter ?</label><br />
                                 <input step="number" placeholder="Quantité" 
@@ -62,7 +62,7 @@ async function getCameras() {                       // Cette partie est très si
 
                     if (quantity < 1) { 
  
-                        swal("Un minimum d'une lentille est requis", "error");
+                        swal("Un minimum d'une lentille est requise", "error");
                     
                     } else {
                         let cart = {
@@ -74,7 +74,7 @@ async function getCameras() {                       // Cette partie est très si
                             "imageURL" : imageUrl
                         }
                         
-                        swal("Le produit ajouté au panier avec succes", "success");
+                        swal("Le produit a été ajouté au panier avec succes","","success");
 
                     
                         let cartItems = JSON.parse(localStorage.getItem('cameraCart')) || [];
@@ -91,7 +91,7 @@ async function getCameras() {                       // Cette partie est très si
                             
                             for(let i = 0; i < cartItems.length; i++) {   
 
-                                if((cartItems[i].name == cart.name) && cartItems[i].color == cart.lens) { 
+                                if((cartItems[i].name == cart.name) && cartItems[i].lens == cart.lens) { 
                               
                                   let cartItemsQuantityNumber = Number(cartItems[i].quantity); 
 
@@ -119,12 +119,10 @@ async function getCameras() {                       // Cette partie est très si
                     }
                 }
             })
-            if (flag === 0) { 
-                window.location = "error.html";
-        }
-    })
-    return data;
-}
+        })
+    }
+    
+
 
 
 window.onload = () => {    // lancement de la page 
