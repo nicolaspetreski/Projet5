@@ -19,6 +19,148 @@ a {
   text-decoration: none;
 }
 
+header {
+  z-index: 1;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+h3 {
+  color: white;
+}
+
+#price {
+  color: white;
+  font-weight: 700;
+}
+
+.products {
+  padding: 3rem 0rem;
+}
+
+.Zurss, .Hirsch, .Franck, .Kuros, .Katatone {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1.3fr;
+      grid-template-columns: 1fr 1.3fr;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+      grid-template-areas: 'photo name' 'photo info' 'photo button';
+  max-width: 95vw;
+  margin: auto;
+  margin-bottom: 1em;
+  background: radial-gradient(#525252, #131313);
+}
+
+.cameraName {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: name;
+  font-size: 2rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.cameraName {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.cameraInfo {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: info;
+  text-align: center;
+  padding-left: 0rem;
+}
+
+.cameraInfo li {
+  list-style: none;
+}
+
+.cameraPhoto {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 1;
+  grid-area: photo;
+  max-width: 40vw;
+  border: 4px solid #f54538;
+}
+
+#btnCustom {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: button;
+  display: inline-block;
+  font-size: 1.6rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-height: 6vh;
+  background-color: #f54538;
+  border-radius: 2rem;
+  padding: 1rem 1rem 1rem;
+  border: 1px solid white;
+  color: white;
+  margin: 0rem auto 1.5rem auto;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .Zurss, .Hirsch, .Franck, .Kuros, .Katatone {
+        grid-template-areas: 'name name' 'photo photo' 'info info' 'button button' !important;
+  }
+  .Zurss a, .Hirsch a, .Franck a, .Kuros a, .Katatone a {
+    margin: auto;
+  }
+  .Zurss .cameraName, .Hirsch .cameraName, .Franck .cameraName, .Kuros .cameraName, .Katatone .cameraName {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .Zurss .cameraPhoto, .Hirsch .cameraPhoto, .Franck .cameraPhoto, .Kuros .cameraPhoto, .Katatone .cameraPhoto {
+    margin: auto;
+    max-width: 60vw;
+  }
+  .Zurss .cameraInfo, .Hirsch .cameraInfo, .Franck .cameraInfo, .Kuros .cameraInfo, .Katatone .cameraInfo {
+    text-align: center;
+  }
+  .Zurss #price, .Hirsch #price, .Franck #price, .Kuros #price, .Katatone #price {
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 1150px) {
+  #btnCustom {
+    font-size: 1.2rem !important;
+  }
+}
+
+@media (min-width: 1150px) {
+  .cameraName {
+    font-size: 1.5rem;
+  }
+  .cameraInfo {
+    font-size: 1.5rem;
+  }
+}
+
 .products {
   background: radial-gradient(#525252, #131313);
 }
