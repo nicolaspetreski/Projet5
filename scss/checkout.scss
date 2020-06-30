@@ -18,4 +18,373 @@ a{
     text-decoration: none;
 }
 
+#checkoutTitle {
+    margin: auto;
+    text-align: center;
+    line-height: 1.5;
+    padding: 2rem 0rem;
+    max-width: 70vw;
+}
+
+#container {
+    background: radial-gradient(#525252, #131313);
+    padding-bottom: 3rem;
+    height: 100vh;
+}
+
+#cameraContainer img {
+    margin: auto;
+    grid-area: photo;
+    max-width: 30vw;
+    border-radius: 3rem;
+}
+
+.mainContainer { // JS
+    background: radial-gradient(#525252, #131313);
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 0.5fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    'photo name quantity totalPrice'
+    'photo name quantity totalPrice'
+    'photo lenses quantity price';
+    max-width: 95vw;
+    margin: auto;
+    margin-bottom: 2em;
+    border: 2px solid #f54538;
+    border-radius: 3rem;
+}
+
+.cameraImg {
+    grid-area: photo;
+    margin: auto 0rem;
+}
+
+.cameraName {
+    grid-area: name;
+    text-align: center;
+    margin: auto 0rem;
+}
+
+.cameraLens {
+    grid-area: lenses;
+    font-size: 1.2rem;
+}
+
+.cameraQuantity {
+    grid-area: quantity;
+    text-align: center;
+    font-size: 1.2rem;
+    margin: auto 0rem;
+}
+
+.btn-up {
+    font-size: 1.5rem;
+    width: 2rem;
+    border-radius: 3rem;
+    border-width: 0rem;
+    &:hover {
+        background-color: #f54538;
+    }
+    & i {
+        transform: scale(1.6);
+    }
+    background-color: #f54538;
+    cursor: pointer;
+}
+
+.btn-down {
+    font-size: 1.5rem;
+    width: 2rem;
+    border-radius: 3rem;
+    border-width: 0rem;
+    &:hover {
+        background-color: #f54538;
+    }
+    & i {
+        transform: scale(1.6);
+    }
+    background-color: #f54538;
+    cursor: pointer;
+}
+
+.cameraPrix {
+    grid-area: price;
+}
+
+.cameraPrice {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.cameraTotalPrice {
+    grid-area: totalPrice;
+    text-align: center;
+    margin: auto 0rem;
+    font-size: 1.3rem;
+    &-Amount {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+}
+#clearCart {
+    padding-top: 3rem;
+}
+
+#emptyCart {
+    text-align: center;
+    transition: 0.2s;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+    color: white;
+    font-size: 1.3rem;
+    background-color: #f54538;
+    margin: 0rem auto 1rem auto;
+    transition: 0.2s;
+    font-weight: 700;
+     border-radius: 3rem;
+    border-width: 0;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem 0.5rem;
+        &:hover {
+            color: black;
+            background-color: #F5675C;
+            border-radius: 0;
+        }
+}
+
+#totalPrice {
+    padding-top: 2rem;
+    margin-bottom: 3rem;
+    & h2 {
+        text-align: center;
+        font-size: 1.6rem;
+    }
+}
+
+#finalCheckout {
+    padding-bottom: 1rem;
+}
+
+.doubleButton {
+    display: flex;
+    flex-direction: column; 
+}
+
+#confirmCart {
+    transition: 0.2s;
+    font-weight: 700;
+    flex: 1;
+    font-size: 1.3em;
+    display: flex;
+    margin: 2rem auto 0rem auto;
+    color:white;
+    border-radius: 3rem;
+    align-items: center;
+    text-transform: uppercase;
+    background-color: #f54538;
+    max-width: fit-content;
+    border-width: 0;
+    padding: 0.5rem 1rem 0.5rem;
+    justify-content: flex-end;
+        &:hover {
+            color: black;
+            background-color: #F5675C;
+            border-radius: 0;
+        }
+}
+
+#checkoutTitle{
+      margin: auto;
+}
+
+input[type=text], input[type=email], select, textarea {
+    font-size: 1.3rem;
+    width: 100%;
+    padding: 12px;
+    border-radius: 4px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    border-bottom: 0.4rem solid;
+    border-bottom-color: #2c812f;
+    transition: all .3s ease-out;
+}
+
+input[type=text]:focus, input[type=email]:focus {
+    outline-color: #f54538;
+}
+
+input[type=text]:valid:focus, input[type=email]:valid:focus {
+    outline-color: #2c812f;
+}
+
+input:invalid {
+    border-bottom-color: #f54538;
+}
+
+input:invalid:focus {
+      background-color: rgba(192, 218, 241, 0.3);
+}
+
+#form {
+    display: none;
+    border-radius: 5px;
+    padding: 15rem 8rem 15rem 8rem;
+    background: radial-gradient(#525252, #131313);
+    & label {
+        font-size: 1.3rem;  
+    }
+    & .cancel {
+        font-size: 1.3rem;
+        width: 10rem ;
+        background-color: #f54538;
+        margin: 1.5rem 0rem;
+        padding: 0.7rem 0rem;
+        color: #fff;
+        font-weight: bold;
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+        &:hover {
+            background-color: #ce7979 !important;
+        }
+    }
+    & .buttons {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        color: #fff;
+        padding: 1rem 1.2rem;
+        border: none;
+        cursor: pointer;
+        margin-bottom:10px;
+        opacity: 0.8;
+        text-align: center;
+        }
+  }
+
+  #confirmOrder {
+    font-size: 1.3rem;
+    text-align: center;
+    width: 10rem;
+    background-color: #2c812f;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 700;
+    &:hover {
+    background-color: #68aa6c;
+  }
+  }
+
+@media (max-width: 550px) {
+    #cameraContainer .mainContainer {
+         grid-template-areas:
+         'photo'
+         'name'
+         'lenses'
+         'quantity'
+         'price'
+         'totalPrice' !important;
+         & .cameraName {
+             padding: 0rem;
+         }
+         & .cameraName h2{
+             padding: 0.5rem 0rem;
+             margin: 0rem 0rem;
+         }
+         & .cameraLens {
+             padding: 0rem 0rem;
+             & p {
+                 margin: 0rem 0rem;
+                 padding: 0.5rem 0rem;
+             }
+         }
+         & .cameraQuantity p{
+             margin: 0rem 0rem;
+             padding: 0.5rem 0rem;
+         }
+         & .cameraImg img{
+             margin-top: 1rem;
+             max-width: 50vw;
+         }
+         & .cameraPrix p {
+             margin: 1rem 0rem;
+         }
+         & .CameraTotalPrice {
+             & h3 {
+                 margin: 1rem 0rem;
+             }
+         }
+     }
+ }
+ 
+@media (max-width: 768px) {
+     .mainContainer {
+         grid-template-columns: auto !important;
+         grid-template-areas: 
+         '. photo .'
+         'name quantity lenses'
+         'totalPrice quantity price' !important;
+         & p {
+             font-size: 1.6rem !important;
+         }
+     }
+     .cameraImg {
+         text-align: center;
+         padding-top: 1rem;
+     }
+     .cameraPrix {
+         margin: auto 0rem;
+         padding-right: 0.5rem;
+     }
+     .CameraTotalPrice {
+         padding-left: 0.5rem;
+     }
+     .tcameraName {
+         margin: auto 0rem;
+         padding: 0rem !important;
+         & h2 {
+             font-size: 2.6rem;
+         }
+     }
+     .cameraQuantity {
+         padding-top: 1rem;
+     }
+     .cameraLens {
+         margin: auto auto;
+         font-size: 1.4rem;
+         text-align: center;
+         padding-right: 0.5rem;
+     }
+ }
+ 
+@media (min-width: 768px) {
+     .mainContainer {
+         & p {
+             font-size: 1.4rem;
+         }
+         & .cameraName {
+             font-size: 1.7rem;
+         }
+         & .CameraTotalPrice {
+             padding-right: 0.5rem;
+         }
+     }
+ }
+ 
+@media (min-width: 1150px) {
+     .cameraName {
+         font-size: 2.2rem;
+     }
+     p {
+         font-size: 1.8rem !important;
+     }
+ }
+
 @import "gradient";
