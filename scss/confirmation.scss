@@ -1,1 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color: white;
+    font-family: "Montserrat", sans-serif;
+}
+
+h1{
+    font-family: "Lobster", sans-serif;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+#container {
+    background: radial-gradient(#525252, #131313);
+    padding-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+    padding: 0rem 3rem 0rem 3rem;
+}
+
+#confirmationDetails {
+    color: white;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+    background: radial-gradient(#fd7676, #f54538);
+    border-radius: 3rem;
+    width: 40rem;
+    margin: 3rem 0rem 3rem 0rem;
+
+}
+
+h2 {
+    font-size: 1.6rem;
+    margin: 2rem 2rem;
+}
+
+p {
+    font-size: 1.3rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    font-weight: normal;
+    margin: 2rem 2rem;
+}
+
+.invoiceInfo {
+    font-size: 1.5rem;
+    font-weight: 650;
+}
 @import "gradient";

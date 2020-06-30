@@ -1,3 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  font-family: "Lobster", sans-serif;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+#container {
+  background: radial-gradient(#525252, #131313);
+  padding-bottom: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0rem 3rem 0rem 3rem;
+}
+
+#confirmationDetails {
+  color: white;
+  text-align: center;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  background: radial-gradient(#fd7676, #f54538);
+  border-radius: 3rem;
+  width: 40rem;
+  margin: 3rem 0rem 3rem 0rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin: 2rem 2rem;
+}
+
+p {
+  font-size: 1.3rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  font-weight: normal;
+  margin: 2rem 2rem;
+}
+
+.invoiceInfo {
+  font-size: 1.5rem;
+  font-weight: 650;
+}
+
 .products {
   background: radial-gradient(#525252, #131313);
 }
@@ -21,11 +96,24 @@ nav {
           align-items: center;
 }
 
-#logo {
+nav .navs {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+nav .navs li {
+  margin-left: 1rem;
+}
+
+nav #logo {
   position: relative;
 }
 
-#logo::after {
+nav #logo::after {
   content: "";
   position: absolute;
   top: 0;
