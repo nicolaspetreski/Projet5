@@ -52,6 +52,8 @@ h3 {
     margin: auto;
     margin-bottom: 1em;
     background: radial-gradient(#525252, #131313);
+    border-radius: 3rem;
+    border: 2px solid #f54538;
 }
 
 .cameraName {
@@ -78,7 +80,7 @@ h3 {
 .cameraPhoto {
     grid-area: photo;
     max-width: 40vw;
-    border: 4px solid #f54538;
+    border-radius: 3rem;
 }
 
 .Hirsch, .Franck, .Kuros, .Katatone {
@@ -87,17 +89,17 @@ h3 {
 
 #btnCustom {
     grid-area: button;
-    display:inline-block;
+    display: inline-block;
     font-size: 1.6rem;
     width: fit-content;
     max-height: 6vh;
 	background-color:#f54538;
     border-radius: 2rem;
     padding: 0rem 2rem 0rem;
-	border: 1px solid white;
     color: white;
     margin: 0rem auto 1.5rem auto;
     cursor: pointer;
+    border-width: 0;
 }
 
 @media (max-width: 768px) {
