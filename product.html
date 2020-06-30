@@ -9,16 +9,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@100;200;300;400&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/c838d79e10.js" crossorigin="anonymous"></script>
     
-    <title>Produits Oricam, appareils photos pour tous les gouts!</title> 
+    <title>Produits Oricam, appareils photos et lentilles pour tous les gouts!</title> 
   </head>
 
   <body>
     <header>
       <div class="nav-container">
         <nav>
-            <h1 id="logo">Oricam</h1>
-                <a class="nav-item nav-link" href="index.html"><i class="fas fa-home"></i>Page Principale</a>
-                <a class="order" href="checkout.html">Panier<i class="fas fa-shopping-cart"></i></a>
+            <h1><a href="index.html" id="logo">Oricam</a></h1>
+            <ul class="navs">
+              <li>
+                <a class="nav-item nav-link" href="index.html">Page Principale</a>
+              </li>
+              <li>
+                <a class="order" href="checkout.html">Panier</a>
+              </li>
+            </ul>
         </nav>
       </div>
     </header>
@@ -27,18 +33,16 @@
       <div id="product-pull">
       </div>
 
-  <section class="cameraLensChoice">
-      <div class="cameraLens">
-          <label for="camera-lens">Lentille</label>
+      <section class="cameraLensChoice">
+        <div class="cameraLens">
+          <label for="camera-lens">Distance focale de la lentille</label>
           <select id="camera-lens" size="1">
           </select>
-      </div>
-  </section>
+        </div>
+      </section>
       <div class="panierLink">
-          <button type="button" class="checkoutClick" id="btn-checkout" onclick="location.href = 'checkout.html';">Accéder au panier</button>
       </div>
-</section>
-    
+    </section>
     
     <footer>
       <div class="nav-container">
@@ -50,26 +54,16 @@
             <li><a href="#">Conditions</a></li>
           </ul>
 
-          
-        <div class="social">
+        <div class="networks">
           <h3>Suivez-nous</h3>
-          <a href="https://www.facebook.com/Oricam/" target="_blank"
-            ><span class="social-text"></span
-            ><i class="fab fa-facebook-f"></i
-          ></a>
-          <a href="https://twitter.com/Oricam" target="_blank"
-            ><span class="social-text"></span
-            ><i class="fab fa-twitter"></i
-          ></a>
-          <a href="https://instagram.com/Oricam/" target="_blank"
-            ><span class="social-text"></span
-            ><i class="fab fa-instagram"></i
-          ></a>
-          
+          <a href="https://www.facebook.com/Oricam/" target="_blank"><span class="social-network"></span><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/Oricam" target="_blank"><span class="social-network"></span><i class="fab fa-twitter"></i></a>
+          <a href="https://instagram.com/Oricam/" target="_blank"><span class="social-network"></span><i class="fab fa-instagram"></i></a>
         </div>
       </nav>
     </div>
     </footer>
     <script src="product.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </body>
 </html>
