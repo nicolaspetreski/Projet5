@@ -16,17 +16,15 @@ function cameraGet() {   // Fonction principale pour l'affichage du panier
 
     if(!cartItems.length) { // Au cas ou le panier est vide
         title.textContent = "Votre panier est vide pour le moment, redirigez vous vers la page d'acceuil et choisissez une camera ainsi qu'une lentille !";
-                document.getElementById('viderPanier').style.display="none";
-                document.getElementById('finalPrice').style.display="none";
+                document.getElementById('clearCart').style.display="none";
+                document.getElementById('totalPrice').style.display="none";
                 document.getElementById('container').style.paddingBottom="0";
                 document.getElementById('container').style.minHeight="80vh";
                 document.querySelector('#container').style.display="flex";
-                document.querySelector('.hiddenOnForm').style.justifySelf="center";
-                document.querySelector('.hiddenOnForm').style.margin='auto';
+                document.querySelector('.classForm').style.justifySelf="center";
+                document.querySelector('.classForm').style.margin='auto';
 
     } else {  //Si il y a des objets dans le panier alors..
-
-        title.textContent = "Mon panier :";
 
         cartItems.forEach(cartItem => {     
             let totalPrice = (cartItem.quantity * cartItem.price);
@@ -44,7 +42,7 @@ function cameraGet() {   // Fonction principale pour l'affichage du panier
                         </div>
 
                         <div class="cameraLens">
-                            <p> Lentille : ${cartItem.lens} </p>
+                            <p> Lentille : ${cartItem.lenses} </p>
                         </div>
 
                         <div class="cameraQuantity">
@@ -65,11 +63,11 @@ function cameraGet() {   // Fonction principale pour l'affichage du panier
                         </div>
 
                         <div class="cameraPrix">
-                            <p class="cameraPrice"> Prix pour une piece : ${cartItem.price} € </p>
+                            <p class="cameraPrice"> *Prix par piece : ${cartItem.price} € </p>
                         </div>
                     <div class="cameraTotalPrice">
                         <h3 class="cameraTotalPrice-Title">Le prix total est</h3>
-                        <p><span class="cameraTotalPrice-Amount">${cartItem.quantity * cartItem.price}</span> €</p>
+                        <p><span class="CameraTotalPrice-Amount">${cartItem.quantity * cartItem.price}</span> €</p>
                     </div>
                 </div>`;  
 
@@ -77,14 +75,14 @@ function cameraGet() {   // Fonction principale pour l'affichage du panier
                 let buttonsUp = document.querySelectorAll('.btn-up');
                 buttonsUp.forEach((button) => {
                     button.addEventListener('click', function() {
-                        swal("Bouton non fonctionnel pour le moment !", "Promis, le développeur y travaille", "error")
+                        swal("Button does not work atm", "error")
                 });                
              });
              // Donc ça ne fonctionne ni pour + ni pour -
              let buttonsDown = document.querySelectorAll('.btn-down');
                 buttonsDown.forEach((button) => {
                     button.addEventListener('click', function() {
-                        swal("Bouton non fonctionnel pour le moment !", "Promis, le développeur y travaille", "error")
+                        swal("Button does not work atm", "error")
                 });                
              });
 

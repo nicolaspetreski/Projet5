@@ -26,8 +26,8 @@ async function getCameras() {                       // Cette partie est très si
                             </ul> 
                             <img src="${imageUrl}" alt="Photo de ${name}" class="cameraPhoto"></img>
                             <div class="quantityDiv">
-                                <label for="quantityInput">combien de lentilles aimeriez-vous acheter ?</label><br />
-                                <input step="number" placeholder="Quantité" 
+                                <label for="quantityInput">Saisissez le nombre de lentilles que vous desirez acheter</label><br />
+                                <input step="number" placeholder="Quantité"
                                     class="quantity-input" id="quantityInput" 
                                     name="quantityInput" type="number" min="1" max="99">
                                 </input>
@@ -41,7 +41,7 @@ async function getCameras() {                       // Cette partie est très si
                                     class="btn btn-default";">
                                     Ajouter au panier
                                 </button>
-                                <i class="fas fa-shopping-cart icon-card"></i>
+                                <button type="button" class="checkoutClick" id="btn-checkout" onclick="location.href = 'checkout.html';">Accéder au panier</button>
                             </div>
                         </div>`;
 
@@ -56,13 +56,13 @@ async function getCameras() {                       // Cette partie est très si
                     
                     panier.addEventListener('click', function(e) {
                         
-                    let color = document.querySelector('select').value;
+                    let lens = document.querySelector('select').value;
 
                     let quantity = document.getElementById('quantityInput').value;
 
                     if (quantity < 1) { 
  
-                        swal("Un minimum d'une lentille est requise", "error");
+                        swal("Un minimum d'une lentille est requise", "",  "error");
                     
                     } else {
                         let cart = {
@@ -74,7 +74,7 @@ async function getCameras() {                       // Cette partie est très si
                             "imageURL" : imageUrl
                         }
                         
-                        swal("Le produit a été ajouté au panier avec succes","","success");
+                        swal("Le produit a été ajouté au panier", "","success");
 
                     
                         let cartItems = JSON.parse(localStorage.getItem('cameraCart')) || [];
@@ -91,7 +91,7 @@ async function getCameras() {                       // Cette partie est très si
                             
                             for(let i = 0; i < cartItems.length; i++) {   
 
-                                if((cartItems[i].name == cart.name) && cartItems[i].lens == cart.lens) { 
+                                if((cartItems[i].name == cart.name) && cartItems[i].lenses == cart.lenses) { 
                               
                                   let cartItemsQuantityNumber = Number(cartItems[i].quantity); 
 
@@ -120,6 +120,7 @@ async function getCameras() {                       // Cette partie est très si
                 }
             })
         })
+        return data;
     }
     
 

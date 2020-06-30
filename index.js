@@ -14,7 +14,7 @@ async function getCameras() {                       // fonction asynchrone
                     <li id="price">Prix: ${price/100}€</li> 
                 </ul> 
                 <img src="${imageUrl}" alt="Photo de ${name}" class="cameraPhoto"></img>
-                <button onclick='location.href="product.html?id=${_id}"' type="button" id="btnCustom"><i class="fas fa-cog"></i>Choisissez la lentille</button>
+                <button onclick='location.href="product.html?id=${_id}"' type="button" id="btnCustom">Je choisis la lentille</button>
             </div>`;         
                                                
         })                                                      
