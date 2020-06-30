@@ -18,4 +18,209 @@ a{
     text-decoration: none;
 }
 
+#container {
+    background: radial-gradient(#525252, #131313);
+    padding: 2rem 2rem;
+}
+
+.cameraImport {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    'photo name'
+    'photo quantity'
+    'photo info'
+    '. panier';
+    max-width: 100vw;
+    margin: auto;
+    margin-bottom: 1em;
+    padding-top: 2rem;
+}
+
+.cameraName {
+    grid-area: name;
+    font-size: 1.8rem;
+}
+
+select {
+    display: table-row;
+    height: 3.3vh;
+    overflow: hidden;
+    font-size: 1.3rem;
+    max-width: 15vw;
+    align-self: center;
+}
+
+select::after {
+    content: none;
+}
+
+option {
+    display: table-cell;
+    font-size: 1.3rem;
+}
+
+.quantityDiv {
+    grid-area: quantity;
+    font-size: 1.4rem;
+    & input {
+        transform: scale(1.4);
+        min-width: 5rem;
+        text-align: center;
+    }
+}
+
+#description {
+    font-style: italic;
+}
+
+
+.cameraInfo {
+    grid-area: info;
+    text-align: center;
+    padding-left: 0rem;
+}
+
+.cameraPhoto {
+    margin: auto;
+    grid-area: photo;
+    max-width: 45vw;
+    border: 3px solid #f54538;
+    border-radius: 3rem;
+}
+
+#product-pull {
+    text-align: center;
+    li {
+        list-style: none;
+        font-size: 1.6rem;
+        font-weight: 400;
+        padding: 4rem 2.5rem;
+        &#price {
+            font-weight: bold;
+        }
+    }
+}
+
+.checkout {
+    transform: scale(1.4);
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 30vw;
+    grid-area: panier;
+    justify-content: flex-end;
+}
+
+.btn-default {
+  flex: 1;
+  transition: 0.2s;
+  font-weight: 700;
+  color: #fff;
+  background-color: #f54538;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  border-width: 0;
+  padding: 0.5rem 1rem 0.5rem;
+        &:hover {
+            color: black;
+            background-color: #F5675C;
+            border-radius: 0;
+}
+}
+
+#btn-checkout {
+    flex: 2;
+    margin-top: 1rem;
+    transition: 0.2s;
+    font-weight: 700;
+    color: black;
+    border-radius: 2rem;
+    text-transform: uppercase;
+    border-width: 0;
+    padding: 0.5rem 1rem 0.5rem;
+        &:hover {
+            color: black;
+            background-color: #F5675C;
+            border-radius: 0;
+}
+}
+
+
+
+.cameraLens {
+    position: relative;
+    grid-area: lenses;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1.5rem;
+    font-size: 1.4rem;
+    margin: auto; 
+    max-width: fit-content;
+    text-align: center;
+}
+
+.cameraLensChoice{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-areas: 'lenses .'
+}
+
+label {
+    padding-bottom: 0.5rem;
+    font-weight: 700;
+    font-size: x-large;
+}
+
+@media (max-width: 768px) {
+    .cameraImport {
+        grid-template-areas:
+        'name name'
+        'photo photo'
+        'info info'
+        'quantity quantity'
+        'panier panier' !important;
+        padding-top: 0rem !important;
+        }
+        a {
+            margin: auto;
+        }
+        .cameraPhoto {
+            margin: auto;
+            max-width: 60vw;
+        }
+        .cameraInfo {
+            text-align: center;
+            margin-bottom: 0rem;
+        }
+        .checkout {
+            max-width: 60vw !important;
+            font-size: 1.3rem;
+        }
+        .quantityDiv {
+            position: relative;
+            padding: 1.5rem 0rem;
+            bottom: 1rem;
+        }
+
+    .cameraLensChoice {
+        padding-top: 1rem;
+        display: flex !important;
+        flex-direction: column;
+        margin: auto;
+    }
+    .cameraLens {
+        bottom: 11vh !important;
+    }
+    .checkout {
+        top: 11vh !important;
+    }
+    select {
+        height: 3.5vh !important;
+    }
+}
+
 @import "gradient";
