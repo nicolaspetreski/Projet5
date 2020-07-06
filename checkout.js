@@ -25,7 +25,7 @@ function cameraGet() {   // Fonction principale pour l'affichage du panier
                 document.querySelector('.classForm').style.margin='auto';
 
     } else {  //Si il y a des objets dans le panier alors..
-
+        
         cartItems.forEach(cartItem => {     
             let totalPrice = (cartItem.quantity * cartItem.price);
 
@@ -179,9 +179,8 @@ function orderCameras() {
                     localStorage.setItem("orderIsConfirmed", JSON.stringify(orderRecap));   
                     
                     swal("Oricam vous remerci pour votre commande !", "On vous redirige vers la page de confirmation dans un instant", "success");
-                    setTimeout(function() {window.location = 'confirmation.html'; }, 3000);
-                    // On ajoute une petite fonction setTimeout pour ajouter un délai de 3 secondes entre l'apparition du message swal
-                    // Et la redirection de la page vers notre page de confirmation de commande 
+                    setTimeout(function() {window.location = 'confirmation.html'; }, 4000);
+                    // délai de 4 secondes entre l'apparition du message swal et redirection de la page vers notre page de confirmation
                 } 
             })
      }

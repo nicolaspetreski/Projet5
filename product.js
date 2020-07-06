@@ -56,7 +56,7 @@ async function getCameras() {                       // Cette partie est très si
                     
                     panier.addEventListener('click', function(e) {
                         
-                    let lens = document.querySelector('select').value;
+                    let lenses = document.querySelector('select').value;
 
                     let quantity = document.getElementById('quantityInput').value;
 
