@@ -1,5 +1,5 @@
 const urlAPI = "http://localhost:3000/api/cameras";         
-const teddyAppend = document.getElementById("mainPage");
+const cameraAppend = document.getElementById("mainPage");
 
 test('Successful indexing append === Inside of an API', () => {
 async function getCameras() {                      

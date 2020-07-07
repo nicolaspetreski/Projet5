@@ -5,6 +5,6 @@ test('We have this many cameras', () => {
     async function getCameras() { 
     let response = await fetch(urlAPI);           
     let data = await response.json()                
-    expect(data).toHaveLength(4);
+    expect(data).toHaveLength(5);
     }
 })
