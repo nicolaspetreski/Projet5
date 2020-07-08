@@ -6,7 +6,7 @@ const postUrlAPI = "http://localhost:3000/api/cameras/order";
 
 const totalCartCost = document.getElementById('finalCheckout');
 
-function cameraGet() {   // Fonction principale pour l'affichage du panier
+function cameraGet() {   
     
     let title = document.querySelector('#checkoutTitle');
 
@@ -14,7 +14,7 @@ function cameraGet() {   // Fonction principale pour l'affichage du panier
 
     let finalCheckout = 0;
 
-    if(!cartItems.length) { // Au cas ou le panier est vide
+    if(!cartItems.length) { 
         title.textContent = "Votre panier est vide pour le moment, redirigez vous vers la page d'acceuil et choisissez une camera ainsi qu'une lentille !";
                 document.getElementById('clearCart').style.display="none";
                 document.getElementById('totalPrice').style.display="none";
@@ -24,12 +24,12 @@ function cameraGet() {   // Fonction principale pour l'affichage du panier
                 document.querySelector('.classForm').style.justifySelf="center";
                 document.querySelector('.classForm').style.margin='auto';
 
-    } else {  //Si il y a des objets dans le panier alors..
+    } else { 
         
         cartItems.forEach(cartItem => {     
             let totalPrice = (cartItem.quantity * cartItem.price);
 
-            //Code HTML du panier
+            
             cameraContainer.innerHTML += `
                 <div class="mainContainer">
                     <div class="cameraImg">
@@ -46,20 +46,7 @@ function cameraGet() {   // Fonction principale pour l'affichage du panier
                         </div>
 
                         <div class="cameraQuantity">
-                            <button 
-                                type="button"
-                                id="up";
-                                class="btn-up">
-                                <i class="fas fa-angle-up">
-                                </i>
-                            </button>
                             <p> Quantité : <span class="test">${cartItem.quantity}</span></p>
-                            <button 
-                                type="button"
-                                id="down";
-                                class="btn-down">
-                                <i class="fas fa-angle-down"></i>
-                            </button>
                         </div>
 
                         <div class="cameraPrix">
@@ -71,32 +58,22 @@ function cameraGet() {   // Fonction principale pour l'affichage du panier
                     </div>
                 </div>`;  
 
-                // Malheureusement je n'ai pas encore réussi à coder l'incrémentation des quantités du panier
-                let buttonsUp = document.querySelectorAll('.btn-up');
-                buttonsUp.forEach((button) => {
-                    button.addEventListener('click', function() {
-                        swal("Button does not work atm", "error")
-                });                
-             });
-             // Donc ça ne fonctionne ni pour + ni pour -
-             let buttonsDown = document.querySelectorAll('.btn-down');
-                buttonsDown.forEach((button) => {
-                    button.addEventListener('click', function() {
-                        swal("Button does not work atm", "error")
-                });                
-             });
+                
+                
 
-        });     // récupération des prix totaux de chaque item du panier
+        });     
+                
+
                 const CamerasTotalPrice = [...document.getElementsByClassName('CameraTotalPrice-Amount')];
-                // Loop pour chaque prix total dans le panier
+                
                 CamerasTotalPrice.forEach(camera => {
                     let cameraTotalPrice = parseInt(camera.innerHTML, 10);   
-                     // Ceci nous permet de récupérer un "number" au lieu d'un "string"
+                     
 
                     finalCheckout += cameraTotalPrice;   
                 })
 
-                totalCartCost.innerHTML = finalCheckout + ' €';     // Affichage du prix total du panier
+                totalCartCost.innerHTML = finalCheckout + ' €';     
     }
 }
 
@@ -119,7 +96,7 @@ function emptyCart() {
     })
 }
 
-// Quand on confirme le panier -->>
+
 function confirmCart() { 
     document.getElementById("form").style.display="block";
     document.querySelector(".classForm").style.display="none";
@@ -178,9 +155,9 @@ function orderCameras() {
                     
                     localStorage.setItem("orderIsConfirmed", JSON.stringify(orderRecap));   
                     
-                    swal("Oricam vous remerci pour votre commande !", "On vous redirige vers la page de confirmation dans un instant", "success");
+                    swal("Oricam vous remercie pour votre commande !", "On vous redirige vers la page de confirmation dans un instant", "success");
                     setTimeout(function() {window.location = 'confirmation.html'; }, 4000);
-                    // délai de 4 secondes entre l'apparition du message swal et redirection de la page vers notre page de confirmation
+                    
                 } 
             })
      }

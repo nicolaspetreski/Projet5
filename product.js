@@ -2,8 +2,8 @@ const urlAPI = "http://localhost:3000/api/cameras";
 const cameraAppend = document.getElementById("product-pull");
 const cameraLensAppend = document.getElementById("camera-lens");
 
-async function getCameras() {                       // Cette partie est très similaire à index.js
-    var flag = 0;                       // Déclaration d'un flag qui servira plus tard pour la page d'erreur
+async function getCameras() {                       
+    var flag = 0;                       
     
     let response = await fetch(urlAPI);
     let data = await response.json()
@@ -126,7 +126,7 @@ async function getCameras() {                       // Cette partie est très si
 
 
 
-window.onload = () => {    // lancement de la page 
+window.onload = () => {  
     getCameras();
 }
 

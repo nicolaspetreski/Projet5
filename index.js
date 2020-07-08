@@ -1,7 +1,7 @@
-const urlAPI = "http://localhost:3000/api/cameras"; // Déclaration api
+const urlAPI = "http://localhost:3000/api/cameras"; 
 const cameraAppend = document.getElementById("showcase");
 
-async function getCameras() {                       // fonction asynchrone
+async function getCameras() {                       
     let response = await fetch(urlAPI);          
     let data = await response.json()                
     .then((data) => {

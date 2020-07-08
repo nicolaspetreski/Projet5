@@ -29,7 +29,7 @@ a{
 #container {
     background: radial-gradient(#525252, #131313);
     padding-bottom: 3rem;
-    height: 100vh;
+    padding: 1rem 1rem;
 }
 
 #cameraContainer img {
@@ -45,9 +45,9 @@ a{
     grid-template-columns: 1.5fr 1fr 0.5fr 1fr;
     grid-template-rows: auto;
     grid-template-areas: 
-    'photo name quantity totalPrice'
-    'photo name quantity totalPrice'
-    'photo lenses quantity price';
+    'photo name . price'
+    'photo . . quantity'
+    'photo lenses . totalPrice';
     max-width: 95vw;
     margin: auto;
     margin-bottom: 2em;
@@ -69,6 +69,9 @@ a{
 .cameraLens {
     grid-area: lenses;
     font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-self: center;
 }
 
 .cameraQuantity {
@@ -78,38 +81,10 @@ a{
     margin: auto 0rem;
 }
 
-.btn-up {
-    font-size: 1.5rem;
-    width: 2rem;
-    border-radius: 3rem;
-    border-width: 0rem;
-    &:hover {
-        background-color: #f54538;
-    }
-    & i {
-        transform: scale(1.6);
-    }
-    background-color: #f54538;
-    cursor: pointer;
-}
-
-.btn-down {
-    font-size: 1.5rem;
-    width: 2rem;
-    border-radius: 3rem;
-    border-width: 0rem;
-    &:hover {
-        background-color: #f54538;
-    }
-    & i {
-        transform: scale(1.6);
-    }
-    background-color: #f54538;
-    cursor: pointer;
-}
-
 .cameraPrix {
     grid-area: price;
+    justify-content: center;
+    align-self: center;
 }
 
 .cameraPrice {

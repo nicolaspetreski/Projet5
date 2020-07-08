@@ -2,7 +2,7 @@ const checkoutItems = JSON.parse(localStorage.getItem('orderIsConfirmed')) || []
 
 let textZone = document.getElementById('confirmationDetails');
 
-// Création du contenu HTML && intégration du contenu du localStorage
+
 textZone.innerHTML += 
 `
 <h1> Oricam vous remerci pour votre commande !</h1>

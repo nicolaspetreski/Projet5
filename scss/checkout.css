@@ -30,7 +30,7 @@ a {
 #container {
   background: radial-gradient(#525252, #131313);
   padding-bottom: 3rem;
-  height: 100vh;
+  padding: 1rem 1rem;
 }
 
 #cameraContainer img {
@@ -51,7 +51,7 @@ a {
       grid-template-columns: 1.5fr 1fr 0.5fr 1fr;
   -ms-grid-rows: auto;
       grid-template-rows: auto;
-      grid-template-areas: 'photo name quantity totalPrice' 'photo name quantity totalPrice' 'photo lenses quantity price';
+      grid-template-areas: 'photo name . price' 'photo . . quantity' 'photo lenses . totalPrice';
   max-width: 95vw;
   margin: auto;
   margin-bottom: 2em;
@@ -69,7 +69,6 @@ a {
 
 .cameraName {
   -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
   -ms-grid-column: 2;
   grid-area: name;
   text-align: center;
@@ -81,58 +80,35 @@ a {
   -ms-grid-column: 2;
   grid-area: lenses;
   font-size: 1.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 
 .cameraQuantity {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 3;
-  -ms-grid-column: 3;
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
   grid-area: quantity;
   text-align: center;
   font-size: 1.2rem;
   margin: auto 0rem;
 }
 
-.btn-up {
-  font-size: 1.5rem;
-  width: 2rem;
-  border-radius: 3rem;
-  border-width: 0rem;
-  background-color: #f54538;
-  cursor: pointer;
-}
-
-.btn-up:hover {
-  background-color: #f54538;
-}
-
-.btn-up i {
-  -webkit-transform: scale(1.6);
-          transform: scale(1.6);
-}
-
-.btn-down {
-  font-size: 1.5rem;
-  width: 2rem;
-  border-radius: 3rem;
-  border-width: 0rem;
-  background-color: #f54538;
-  cursor: pointer;
-}
-
-.btn-down:hover {
-  background-color: #f54538;
-}
-
-.btn-down i {
-  -webkit-transform: scale(1.6);
-          transform: scale(1.6);
-}
-
 .cameraPrix {
-  -ms-grid-row: 3;
+  -ms-grid-row: 1;
   -ms-grid-column: 4;
   grid-area: price;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .cameraPrice {
@@ -141,8 +117,7 @@ a {
 }
 
 .cameraTotalPrice {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
+  -ms-grid-row: 3;
   -ms-grid-column: 4;
   grid-area: totalPrice;
   text-align: center;
