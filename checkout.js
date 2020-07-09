@@ -46,7 +46,7 @@ function cameraGet() {
                         </div>
 
                         <div class="cameraQuantity">
-                            <p> Quantité : <span class="test">${cartItem.quantity}</span></p>
+                            <p> Quantité : <span>${cartItem.quantity}</p>
                         </div>
 
                         <div class="cameraPrix">
@@ -84,7 +84,7 @@ function emptyCart() {
             title: 'Confirmez vous?',
             text: "Vous ne pourrez pas remonter dans le temps et corriger votre erreur",
             icon: 'warning',
-            buttons: {cancel: true, confirm: "Confirmer"},
+            buttons: {cancel: "Annuler", confirm: "Confirmer"},
             dangerMode: true,
         }).then((result) => {
             if (result.false) {     

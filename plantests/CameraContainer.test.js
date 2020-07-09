@@ -19,7 +19,7 @@ async function getCameras() {
             </div>`;            
                                              
 
-                expect(camera.name()).toContain("test")
+                expect(camera.name()).toContain("Zurss 50S")
                 expect(camera._id()).toContain("5be1ed3f1c9d44000030b061")
                 expect(camera.lenses()).toContain("35mm 1.4","50mm 1.6")
                 expect(camera.price()).toContain("49900")
