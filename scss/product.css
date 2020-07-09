@@ -1,24 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-body {
-  color: white;
-  font-family: "Montserrat", sans-serif;
-}
-
-h1 {
-  font-family: "Lobster", sans-serif;
-}
-
-a {
-  color: white;
-  text-decoration: none;
-}
-
 #container {
   background: radial-gradient(#525252, #131313);
   padding: 2rem 2rem;
@@ -265,8 +244,29 @@ label {
   }
 }
 
-.products {
+#container {
   background: radial-gradient(#525252, #131313);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  font-family: "Lobster", sans-serif;
+}
+
+a {
+  color: white;
+  text-decoration: none;
 }
 
 .nav-container {

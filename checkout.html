@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Panier Oricam, finalisez votre commande de cameras vintage"/>
-    <script src="https://kit.fontawesome.com/e53970f2ae.js"crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/e53970f2ae.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="scss/checkout.css" />
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@100;200;300;400&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/c838d79e10.js" crossorigin="anonymous"></script>
@@ -19,7 +19,7 @@
           <h1><a href="index.html" id="logo">Oricam</a></h1>
             <ul class="navs">
               <li>
-                <a class="nav-item nav-link" href="index.html"></i>Page Principale</a>
+                <a class="nav-item nav-link" href="index.html">Page Principale</a>
               </li>
               <li>
                 <a class="order" href="checkout.html">Panier</a>
@@ -31,7 +31,7 @@
 
     <div id="container">
       <div class="classForm">
-          <h2 id="checkoutTitle"></h2>
+          <h2 id="checkoutTitle">Articles de votre panier</h2>
           
           <section id="cameraContainer">
           </section>
@@ -41,15 +41,15 @@
               <h2>Somme total du panier</h2>
               <h2 id="finalCheckout"></h2>
               <div class="doubleButton" id="addBtn">
-                <section class="checkout" id="confirmPanier">
+                <section class="checkout">
                   <button 
                       type="button" id="confirmCart" onclick="confirmCart()" class="btn-Confirm">
-                      Je souhaite confirmer mon panier <br /><i class="fas fa-shopping-cart icon-card"></i>
+                      Je souhaite confirmer mon panier <br /><i class="fa fa-check" aria-hidden="true"></i>
                   </button>
                 </section>
                 
                 <section id="clearCart">
-                      <button type="button" id="emptyCart" onclick="emptyCart()"> Je souhaite vider mon panier <br/><i class="fas fa-trash"></i>
+                      <button type="button" id="emptyCart" onclick="emptyCart()"> Je souhaite vider mon panier <br/><i class="fa fa-times" aria-hidden="true"></i>
                       </button>
                 </section>
                   

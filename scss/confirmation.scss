@@ -1,22 +1,4 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-body{
-    color: white;
-    font-family: "Montserrat", sans-serif;
-}
-
-h1{
-    font-family: "Lobster", sans-serif;
-}
-
-a{
-    color: white;
-    text-decoration: none;
-}
 
 #container {
     background: radial-gradient(#525252, #131313);
@@ -58,6 +40,6 @@ h3 {
 
 .invoiceInfo {
     font-size: 1.5rem;
-    font-weight: 650;
+    font-weight: 600;
 }
 @import "gradient";

@@ -1,22 +1,4 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-body{
-    color: white;
-    font-family: "Montserrat", sans-serif;
-}
-
-h1{
-    font-family: "Lobster", sans-serif;
-}
-
-a{
-    color: white;
-    text-decoration: none;
-}
 
 #checkoutTitle {
     margin: auto;
@@ -28,8 +10,8 @@ a{
 
 #container {
     background: radial-gradient(#525252, #131313);
-    padding-bottom: 3rem;
-    padding: 1rem 1rem;
+    padding-bottom: 4rem;
+    padding-top: 4rem;
 }
 
 #cameraContainer img {
@@ -145,7 +127,8 @@ a{
 
 .doubleButton {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
+    padding: 0rem 2rem 0rem 2rem; 
 }
 
 #confirmCart {
