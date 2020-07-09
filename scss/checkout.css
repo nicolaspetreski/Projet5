@@ -339,7 +339,7 @@ input:invalid:focus {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .mainContainer {
     -ms-grid-columns: auto !important;
         grid-template-columns: auto !important;
@@ -377,21 +377,9 @@ input:invalid:focus {
   }
 }
 
-@media (min-width: 768px) {
-  .mainContainer p {
-    font-size: 1.4rem;
-  }
-  .mainContainer .cameraName {
-    font-size: 1.7rem;
-  }
-  .mainContainer .CameraTotalPrice {
-    padding-right: 0.5rem;
-  }
-}
-
-@media (min-width: 1150px) {
+@media (min-width: 1024px) {
   .cameraName {
-    font-size: 2.2rem;
+    font-size: 1.5rem;
   }
   p {
     font-size: 1.8rem !important;
