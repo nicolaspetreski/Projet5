@@ -26,7 +26,7 @@ async function getCameras() {
                             </ul> 
                             <img src="${imageUrl}" alt="Photo de ${name}" class="cameraPhoto"></img>
                             <div class="quantityDiv">
-                                <label for="quantityInput">Saisissez le nombre de lentilles que vous desirez acheter</label><br />
+                                <label for="quantityInput">Saisissez le nombre de cameras que vous desirez acheter</label><br />
                                 <input step="number" placeholder="Quantité"
                                     class="quantity-input" id="quantityInput" 
                                     name="quantityInput" type="number" min="1" max="99">
@@ -62,7 +62,7 @@ async function getCameras() {
 
                     if (quantity < 1) { 
  
-                        swal("Un minimum d'une lentille est requise", "",  "error");
+                        swal("Un minimum d'une camera est requise", "",  "error");
                     
                     } else {
                         let cart = {
